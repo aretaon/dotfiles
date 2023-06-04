@@ -1,5 +1,6 @@
 # dotfiles
 My list of dotfiles.
+The list is managed using [chezmoi](https://www.chezmoi.io/quick-start/)
 
 Programmes I am using include:
 
@@ -12,5 +13,5 @@ Programmes I am using include:
 On any machine these files can be installed and version controlled using
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
+chezmoi init git@github.com:$GITHUB_USERNAME/dotfiles.git
 ```
