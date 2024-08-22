@@ -5,7 +5,7 @@ The list is managed using [chezmoi](https://www.chezmoi.io/quick-start/)
 Programmes I am using include:
 
 - Shell: [zsh](https://www.zsh.org/)
-- Shell styling [oh-my-zsh](https://ohmyz.sh/), [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- Shell styling: [oh-my-posh](https://ohmyposh.dev/)
 - Molecular Visualisation: PyMol, VMD
 
 ## Installation
@@ -13,5 +13,5 @@ Programmes I am using include:
 On any machine these files can be installed and version controlled using
 
 ```bash
-chezmoi init git@github.com:$GITHUB_USERNAME/dotfiles.git
+chezmoi init --apply aretaon
 ```

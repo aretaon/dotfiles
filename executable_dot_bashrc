@@ -23,3 +23,17 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
+
+# boybu prompt
+[ -r /home/$(whoami)/.config/byobu/prompt ] && . /home/$(whoami)/.config/byobu/prompt
+
+if [ -z "${NOZSH}" ] && [ $TERM = "xterm" -o $TERM = "xterm-256color" -o $TERM = "screen" ] && type zsh &> /dev/null
+then
+    export SHELL=$(which zsh)
+    if [[ -o login ]]
+    then
+        exec zsh -l
+    else
+        exec zsh
+    fi
+fi
