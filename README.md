@@ -15,3 +15,12 @@ On any machine these files can be installed and version controlled using
 ```bash
 chezmoi init --apply aretaon
 ```
+
+If this does not work, you can still troublelshoot the underlying git:
+
+```bash
+chezmoi cd
+git remote set-url "origin" https://github.com/aretaon/dotfiles.git
+git branch --set-upstream-to=origin/main
+git pull
+```
