@@ -15,12 +15,20 @@ setopt NOBGNICE
 ## restart running processes on exit
 #setopt HUP
 
-## history
+# The location of the history file
 HISTFILE="$HOME/.zsh_history"
-setopt APPEND_HISTORY
-## for sharing history between zsh processes
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+
+# How many lines to keep in the internal memory
+HISTSIZE=10000
+
+# How many lines to save in the file on disk
+SAVEHIST=10000
+
+# Options
+setopt APPEND_HISTORY          # Append to the file, don't overwrite
+setopt INC_APPEND_HISTORY      # Write to the file immediately after each command
+setopt SHARE_HISTORY           # Share history between different sessions
+setopt HIST_IGNORE_DUPS        # Don't record an entry if it's a duplicate of the previous one
 
 ## never ever beep ever
 setopt NO_BEEP
