@@ -16,6 +16,7 @@ setopt NOBGNICE
 #setopt HUP
 
 ## history
+HISTFILE="$HOME/.zsh_history"
 setopt APPEND_HISTORY
 ## for sharing history between zsh processes
 setopt INC_APPEND_HISTORY
