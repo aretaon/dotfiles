@@ -19,7 +19,7 @@ sudo apt install git unzip zsh
 Then these files can be installed and version controlled using
 
 ```bash
-sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply aretaon
+sh -c "$(curl -fsLS https://get.chezmoi.io)" --init --apply aretaon
 ```
 
 If this does not work, you can still troublelshoot the underlying git:
