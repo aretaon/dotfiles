@@ -13,7 +13,7 @@ Programmes I am using include:
 Fist make sure you have installed all dependencies
 
 ```bash
-sudo apt install git unzip zsh
+sudo apt install git unzip zsh zsh-syntax-highlighting
 ```
 
 Then these files can be installed and version controlled using
