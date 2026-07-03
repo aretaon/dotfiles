@@ -19,7 +19,7 @@ sudo apt install git unzip
 Then these files can be installed and version controlled using
 
 ```bash
-chezmoi init --apply aretaon
+sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply aretaon
 ```
 
 If this does not work, you can still troublelshoot the underlying git:
