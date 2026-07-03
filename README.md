@@ -10,7 +10,13 @@ Programmes I am using include:
 
 ## Installation
 
-On any machine these files can be installed and version controlled using
+Fist make sure you have installed all dependencies
+
+```bash
+sudo apt install git umzip
+```
+
+Then these files can be installed and version controlled using
 
 ```bash
 chezmoi init --apply aretaon
