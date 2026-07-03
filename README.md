@@ -13,7 +13,7 @@ Programmes I am using include:
 Fist make sure you have installed all dependencies
 
 ```bash
-sudo apt install git unzip
+sudo apt install git unzip zsh
 ```
 
 Then these files can be installed and version controlled using
