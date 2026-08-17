@@ -66,14 +66,28 @@ fi
 # Function to ensure oh-my-posh is present
 if ! command -v oh-my-posh &> /dev/null; then
     echo "oh-my-posh not found. Installing..."
-    # Use -s to pass arguments if needed, though the official script is usually standalone
     curl -s https://ohmyposh.dev/install.sh | bash -s
     export PATH=$PATH:/usr/local/bin 
 fi
 
 source "$ZSH_AUTOSUGGEST_DIR/zsh-autosuggestions.zsh"
 
-# Initialize if the command is now available
+# --- MODIFIED OH-MY-POSH BLOCK ---
 if command -v oh-my-posh &> /dev/null; then
-    eval "$(oh-my-posh init zsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json)"
+    OHM_CONFIG_DIR="$HOME/.config/oh-my-posh"
+    OHM_CONFIG_FILE="$OHM_CONFIG_DIR/jandedobbeleer.omp.json"
+    OHM_REMOTE_URL="https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/jandedobbeleer.omp.json"
+
+    # Download if missing
+    if [[ ! -f "$OHM_CONFIG_FILE" ]]; then
+        mkdir -p "$OHM_CONFIG_DIR"
+        curl -sL "$OHM_REMOTE_URL" -o "$OHM_CONFIG_FILE" || echo "Warning: Theme download failed."
+    fi
+
+    # Init using local file if available, otherwise use default
+    if [[ -f "$OHM_CONFIG_FILE" ]]; then
+        eval "$(oh-my-posh init zsh --config "$OHM_CONFIG_FILE")"
+    else
+        eval "$(oh-my-posh init zsh)"
+    fi
 fi
